@@ -1,8 +1,8 @@
---- 1. Create database
-CREATE DATABASE coursework;
-\c coursework;
+--- Set environment variables
+\set DB_PASSWORD `echo $DB_PASSWORD`
+\set DB_USER `echo $DB_USER`
 
---- 2. Create the table
+--- 1. Create the table
 CREATE TABLE food_inventory (
     id VARCHAR(8),  -- Not primary key because the IDs used are not deduplicated,
                     -- which if you ask me defeats the purpose of even having an
@@ -18,9 +18,9 @@ CREATE TABLE food_inventory (
     days_until_expiry INTEGER NOT NULL
 );
 
---- 3. Copy `food_inventory.csv` into the table
+--- 2. Copy `food_inventory.csv` into the table
 \copy food_inventory (id, item, category, expiry_date, price, quantity, total_value, supplier, location, days_until_expiry) FROM '/mnt/db/food_inventory.csv' WITH (FORMAT csv, HEADER true);
 
---- 4. Create user to access this database
-CREATE USER coursework WITH PASSWORD 'password123';     -- This is just an example password ofc
-GRANT SELECT ON food_inventory TO coursework;
+--- 3. Create user to access this database
+CREATE USER :DB_USER WITH PASSWORD :'DB_PASSWORD';
+GRANT SELECT ON food_inventory TO :DB_USER;
