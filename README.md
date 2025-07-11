@@ -6,23 +6,30 @@ I'm gonna be for real, I'm not 100% sure I understood the goal of this coursewor
 
 ## Project Structure
 
-- [`db`](./db/)&nbsp;&mdash;&nbsp;Files needed for database setup
-  - [`food_inventory.csv`](./db/food_inventory.csv)&nbsp;&mdash;&nbsp;Inventory data, taken from the Excel file you gave us
-  - [`migration.sql`](./db/migration.sql)&nbsp;&mdash;&nbsp;Database setup script
-- [`analysis.ipynb`](./analysis.ipynb)&nbsp;&mdash;&nbsp;Analysis notebook
-- [`environment.yml`](./environment.yml)&nbsp;&mdash;&nbsp;Conda environment configuration
-- [`.env.example`](./.env.example)&nbsp;&mdash;&nbsp;Environment variables template
+-   [`analysis.ipynb`](./analysis.ipynb)&nbsp;&mdash;&nbsp;Analysis notebook
+-   [`environment.yml`](./environment.yml)&nbsp;&mdash;&nbsp;Conda environment configuration
+-   [`.env.example`](./.env.example)&nbsp;&mdash;&nbsp;Environment variables template
+-   📂 [`db`](./db/)&nbsp;&mdash;&nbsp;Files needed for database setup
+    -   [`food_inventory.csv`](./db/food_inventory.csv)&nbsp;&mdash;&nbsp;Inventory data taken from the Excel file you gave us
+    -   📂 [`migrations`](./db/migration/)
+        -   [`migration.sql`](./db/migration.sql)&nbsp;&mdash;&nbsp;Database setup script
 
 ## Setup instructions
 
-I wanted this environment to be as replicable as possible, so I am giving you instructions on how to replicate it. Copy [`.env.example`](./.env.example) into `.env`, and make modifications if needed. It has:
+I wanted this environment to be as replicable as possible, so I am giving you instructions on how to replicate it.
 
-- `DB_SUPERUSER_PASSWORD`&nbsp;&mdash;&nbsp;Superuser password for the database
-- `DB_NAME`&nbsp;&mdash;&nbsp;Name of database that we will be connecting to
-- `DB_HOST`&nbsp;&mdash;&nbsp;Host we will be connecting to
-- `DB_PORT`&nbsp;&mdash;&nbsp;Port we will be connecting to
-- `DB_USER`&nbsp;&mdash;&nbsp;User we will be connecting to
-- `DB_PASSWORD`&nbsp;&mdash;&nbsp;User password for the user we will be connecting to
+### Environment variables
+
+Copy [`.env.example`](./.env.example) into `.env`, and make modifications if needed.
+
+The environment variabes used are:
+
+-   `DB_SUPERUSER_PASSWORD`&nbsp;&mdash;&nbsp;Password for the database superuser
+-   `DB_NAME`&nbsp;&mdash;&nbsp;Name of the database that will store the data
+-   `DB_HOST`&nbsp;&mdash;&nbsp;Hostname of the database server
+-   `DB_PORT`&nbsp;&mdash;&nbsp;Port where the database will be accessible
+-   `DB_USER`&nbsp;&mdash;&nbsp;User that will be created for the project
+-   `DB_PASSWORD`&nbsp;&mdash;&nbsp;Password for the user (`DB_USER`)
 
 ### Database
 
@@ -34,7 +41,7 @@ $ docker compose up -d
 
 The migration is automatically run, and our database is ready.
 
-This runs [the database setup script](./db/migration.sql), which:
+This runs [the database setup script](./db/migration/migration.sql), which:
 
 1. Adds a table called `food_inventory`
 2. Copies the content of [`food_inventory.csv`](./db/food_inventory.csv) into the table
