@@ -1,0 +1,10 @@
+name: coursework
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.9
+  - pandas=2.3.1
+  - numpy=2.3.1
+  - psycopg2=2.9.10
+  - pip
