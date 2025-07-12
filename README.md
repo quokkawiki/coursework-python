@@ -1,5 +1,10 @@
 # Python coursework
 
+> **Note**: Yes, I know you told us to use Google Colab, but:
+> 1. I prefer running things locally if possible
+> 2. I don't think you can run a DB in Colab
+> 3. I don't want to waste my Google Drive space on this
+
 ## Goal
 
 I'm gonna be for real, I'm not 100% sure I understood the goal of this coursework but I hope I'm getting it right. I think I should replicate the results seen in `inventory_full_analysis_20250530.xlsx` which you sent us before.
@@ -16,7 +21,7 @@ I'm gonna be for real, I'm not 100% sure I understood the goal of this coursewor
 
 ## Setup instructions
 
-I wanted this environment to be as replicable as possible, so I am giving you instructions on how to replicate it.
+I wanted this environment to be as replicable as possible, so here's how to replicate this environment on your machine:
 
 ### Environment variables
 
