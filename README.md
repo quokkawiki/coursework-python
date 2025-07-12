@@ -16,21 +16,19 @@ I'm gonna be for real, I'm not 100% sure I understood the goal of this coursewor
 -   [`environment.yml`](./environment.yml)&nbsp;&mdash;&nbsp;Conda environment configuration
 -   [`database.sqlite`](./database.sqlite)&nbsp;&mdash;&nbsp;The database we'll be using
 
-## Setup instructions
-
-I wanted this environment to be as replicable as possible, so here's how to replicate this environment on your machine:
-
-### Database
+## Database
 
 Initially, I did this with a PostgreSQL database and I included a Docker Compose with a migration script and environment variables, but then I realized that's really fucking stupid and overkill for this project, so I switched to SQLite3 instead.
 
 You can see how I did the setup in the commit history (up to commit `9b7937b`) if you want.
 
-### Python
+## Setup instructions
+
+I wanted this environment to be as replicable as possible, so here's how to replicate this environment on your machine:
 
 This Python environment is running in [Anaconda](<https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)>) _([download instructions](/docs/getting-started/anaconda/install#macos-linux-installation))_ for replicability.
 
-To create the Python environment, simply run
+To create the Python environment, simply run:
 
 ```
 $ conda env create -f environment.yml
