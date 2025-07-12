@@ -1,6 +1,7 @@
 # Python coursework
 
 > **Note**: Yes, I know you told us to use Google Colab, but:
+>
 > 1. I prefer running things locally if possible
 > 2. I don't think you can run a DB in Colab
 > 3. I don't want to waste my Google Drive space on this
@@ -13,46 +14,17 @@ I'm gonna be for real, I'm not 100% sure I understood the goal of this coursewor
 
 -   [`analysis.ipynb`](./analysis.ipynb)&nbsp;&mdash;&nbsp;Analysis notebook
 -   [`environment.yml`](./environment.yml)&nbsp;&mdash;&nbsp;Conda environment configuration
--   [`.env.example`](./.env.example)&nbsp;&mdash;&nbsp;Environment variables template
--   📂 [`db`](./db/)&nbsp;&mdash;&nbsp;Files needed for database setup
-    -   [`food_inventory.csv`](./db/food_inventory.csv)&nbsp;&mdash;&nbsp;Inventory data taken from the Excel file you gave us
-    -   📂 [`migrations`](./db/migration/)
-        -   [`migration.sql`](./db/migration.sql)&nbsp;&mdash;&nbsp;Database setup script
+-   [`database.sqlite`](./database.sqlite)&nbsp;&mdash;&nbsp;The database we'll be using
 
 ## Setup instructions
 
 I wanted this environment to be as replicable as possible, so here's how to replicate this environment on your machine:
 
-### Environment variables
-
-Copy [`.env.example`](./.env.example) into `.env`, and make modifications if needed.
-
-The environment variabes used are:
-
--   `DB_SUPERUSER_PASSWORD`&nbsp;&mdash;&nbsp;Password for the database superuser
--   `DB_NAME`&nbsp;&mdash;&nbsp;Name of the database that will store the data
--   `DB_HOST`&nbsp;&mdash;&nbsp;Hostname of the database server
--   `DB_PORT`&nbsp;&mdash;&nbsp;Port where the database will be accessible
--   `DB_USER`&nbsp;&mdash;&nbsp;User that will be created for the project
--   `DB_PASSWORD`&nbsp;&mdash;&nbsp;Password for the user (`DB_USER`)
-
 ### Database
 
-For this database, we will be using PostgreSQL because it is what I am familiar with. I used Postgres version 17.5 on Docker Compose for replicability. You can run it with this command:
+Initially, I did this with a PostgreSQL database and I included a Docker Compose with a migration script and environment variables, but then I realized that's really fucking stupid and overkill for this project, so I switched to SQLite3 instead.
 
-```
-$ docker compose up -d
-```
-
-The migration is automatically run, and our database is ready.
-
-This runs [the database setup script](./db/migration/migration.sql), which:
-
-1. Adds a table called `food_inventory`
-2. Copies the content of [`food_inventory.csv`](./db/food_inventory.csv) into the table
-3. Creates a user with permissions to `SELECT` the table
-
-If you want, you can also change this password in the script and in the `.env` file.
+You can see how I did the setup in the commit history (up to commit `9b7937b`) if you want.
 
 ### Python
 
