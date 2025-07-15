@@ -1,6 +1,7 @@
 # Python coursework
 
-> **Note**: Yes, I know you told us to use Google Colab, but:
+> [!NOTE]
+> Yes, I know you told us to use Google Colab, but:
 >
 > 1. I prefer running things locally if possible
 > 2. I don't think you can run a DB in Colab
@@ -46,3 +47,7 @@ When you run [the notebook](./analysis.ipynb), you will be prompted to select a 
 ## Confession
 
 I did use [Claude Sonnet 4](https://claude.ai) to assist me with some more technical parts of this coursework, but for the most part it's actually me. You can see the Git commit history and see that it's mostly my own actual idiocy *(AI)*.
+
+---
+
+Also, I needed to literally rewrite the Git history to remove some files because they were too large, like `food_inventory.csv` which I don't even use anymore, and `database.sqlite`. I then readded the database file and add it with [Git LFS](https://git-lfs.com/) *(Large File Storage)*.
