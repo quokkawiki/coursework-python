@@ -21,7 +21,7 @@ I'm gonna be for real, I'm not 100% sure I understood the goal of this coursewor
 
 Initially, I did this with a PostgreSQL database and I included a Docker Compose with a migration script and environment variables, but then I realized that's really fucking stupid and overkill for this project, so I switched to SQLite3 instead.
 
-You can see how I did the setup in the commit history (up to commit `9b7937b`) if you want.
+You can see how I did the setup in the commit history (up to commit [`19c674d`](https://github.com/quokkawiki/coursework-python/tree/19c674dc59acafaf543db66a230e2c90003c1310)) if you want.
 
 I also created a view `food_inventory_with_relative_expiry`, which adds a column `days_until_expiry` that takes the difference between the latest expiry date and the row's expiry date:
 
