@@ -8,7 +8,7 @@
 
 ## Goal
 
-I'm gonna be for real, I'm not 100% sure I understood the goal of this coursework but I hope I'm getting it right. I think I should replicate the results seen in the inventory analysis notebook which you sent us before.
+I'm gonna be for real, I'm not 100% sure I understood the goal of this coursework but I hope I'm getting it right. I think I should replicate the results seen in the inventory analysis notebook which you sent us before. I did saw that you had variables for profit margins etc. in the original, so I decided to use the IPyWidgets library to create an interactive UI where you can change those variables, and see the results.
 
 ## Project Structure
 
